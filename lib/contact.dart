@@ -36,7 +36,6 @@ class _ContactMeState extends State<ContactMe> {
     final theme = Theme.of(context); // Get the current theme
 
     return FloatingActionButton(
-
       mini: true,
       backgroundColor: theme.scaffoldBackgroundColor,
       elevation: 4,
@@ -47,9 +46,13 @@ class _ContactMeState extends State<ContactMe> {
         size: 15,
       ),
       onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return ContactPage();
-        }));
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return ContactPage();
+            },
+          ),
+        );
       },
     );
   }
@@ -147,7 +150,6 @@ class _ContactPageState extends State<ContactPage> {
               ),
               SizedBox(height: 8),
               TextField(
-
                 controller: textFieldController,
                 maxLines: 4,
                 decoration: InputDecoration(
@@ -161,7 +163,6 @@ class _ContactPageState extends State<ContactPage> {
                   ),
                   border: OutlineInputBorder(),
                   hintText: 'Your message',
-
                 ),
               ),
               Padding(

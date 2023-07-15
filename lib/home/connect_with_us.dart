@@ -4,17 +4,19 @@ import 'package:app/styles/resume_styling_classes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class MissionStatement extends StatefulWidget {
+import '../contact.dart';
+
+class ConnectUs extends StatefulWidget {
   @override
-  _MissionStatementState createState() => _MissionStatementState();
+  _ConnectUsState createState() => _ConnectUsState();
 }
 
-class _MissionStatementState extends State<MissionStatement> {
+class _ConnectUsState extends State<ConnectUs> {
   bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Get the current theme
+    final theme = Theme.of(context);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,7 +45,7 @@ class _MissionStatementState extends State<MissionStatement> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Our Mission',
+                        'Join Us',
                         style: TextStyle(
                           fontFamily: 'DancingScript',
                           color: Color(0xFF313893),
@@ -51,7 +53,7 @@ class _MissionStatementState extends State<MissionStatement> {
                       ),
                       SizedBox(width: 8),
                       Icon(
-                        Icons.info_outline_rounded,
+                        Icons.accessibility_new_outlined,
                         size: 20,
                       ),
                     ],
@@ -77,15 +79,16 @@ class _MissionStatementState extends State<MissionStatement> {
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
                           splashRadius: 15,
-
-                          icon: Icon(Icons.arrow_upward, size: 15,),
+                          icon: Icon(
+                            Icons.arrow_upward,
+                            size: 15,
+                          ),
                           color: Colors.white,
                           onPressed: () {
                             setState(() {
@@ -98,24 +101,24 @@ class _MissionStatementState extends State<MissionStatement> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        MissionStatementIcon(
-                          icon: Icons.language,
-                          color: Colors.greenAccent,
+                        ConnectUsIcon(
+                          icon: Icons.handshake_outlined,
+                          color: Color(0xFFFF9B28),
                         ),
-                        MissionStatementIcon(
-                          icon: Icons.electric_bolt,
-                          color: Colors.yellowAccent,
+                        ConnectUsIcon(
+                          icon: Icons.family_restroom,
+                          color: Colors.lightBlueAccent,
                         ),
-                        MissionStatementIcon(
-                          icon: Icons.favorite,
-                          color: Colors.redAccent,
-                        ),
-                        MissionStatementIcon(
-                          icon: Icons.church,
-                          color: Colors.grey,
+                        ConnectUsIcon(
+                          icon: Icons.person_add,
+                          color: Colors.lightGreenAccent,
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Divider(color: Colors.white, height: 1,),
                     SizedBox(
                       height: 10,
                     ),
@@ -123,9 +126,9 @@ class _MissionStatementState extends State<MissionStatement> {
                       scrollDirection: Axis.vertical,
                       child: SizedBox(
                         width: 180,
-                        height: 350,
+                        height: 150,
                         child: Text(
-                          "We are dedicated to empowering individuals experiencing homelessness by helping them find affordable housing and providing comprehensive support. Together, we create a compassionate environment where everyone has access to safe and stable housing. Through counseling, job assistance, skills training, and essential resources, we empower individuals and families to transform their lives and build a stronger community.",
+                          "Join us in making a difference! Visit our website to learn more and get involved.",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             // letterSpacing: 2,
@@ -134,24 +137,35 @@ class _MissionStatementState extends State<MissionStatement> {
                         ),
                       ),
                     ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ContactPage(),
+                          ),
+                        );
+                      },
+                      child: Text('Sign Up'),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                   ],
                 ),
               ),
             ),
           ),
         ),
-
-
       ],
     );
   }
 }
 
-class MissionStatementIcon extends StatelessWidget {
+class ConnectUsIcon extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  const MissionStatementIcon({
+  const ConnectUsIcon({
     required this.icon,
     required this.color,
   });
@@ -161,9 +175,9 @@ class MissionStatementIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Icon(
-          icon,
-          color: color,
-          size: 20,
+        icon,
+        color: color,
+        size: 20,
       ),
     );
   }

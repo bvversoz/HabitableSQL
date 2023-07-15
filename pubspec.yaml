@@ -61,11 +61,14 @@ dependencies:
   flutter_barcode_scanner:
   http:
   dart_mysql:
+  google_fonts: ^4.0.4
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+#  google_fonts: ^2.1.0
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -80,10 +83,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  fonts:
-    - family: CursiveFont
-      fonts:
-        - asset: fonts/DancingScript-Regular.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -102,10 +101,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Caprasimo
+      fonts:
+        - asset: fonts/caprasimo.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

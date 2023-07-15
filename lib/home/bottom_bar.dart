@@ -10,18 +10,17 @@ class BottomInfoBar extends StatelessWidget {
     return BottomAppBar(
       child: Row(
         children: [
-
           Spacer(),
           IconButton(
             tooltip: 'Search',
             icon: Icon(Icons.search),
-            color: Color(0xFF313893), // Use the icon color from the theme
+            color: Colors.white,
             onPressed: () {},
           ),
           IconButton(
             tooltip: 'Favorite',
             icon: Icon(Icons.favorite),
-            color: Color(0xFF313893), // Use the icon color from the theme
+            color: Colors.white, // Use the icon color from the theme
             onPressed: () {},
           ),
         ],
