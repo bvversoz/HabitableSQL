@@ -4,7 +4,8 @@ import 'package:app/styles/resume_styling_classes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import 'components_body/lowerNav_body.dart';
+import '../styles/button_classes.dart';
+
 
 class MissionStatement extends StatefulWidget {
   @override

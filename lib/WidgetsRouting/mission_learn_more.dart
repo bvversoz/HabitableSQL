@@ -1,12 +1,21 @@
-
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
 import '../home/bottom_bar.dart';
 import '../home/components_appbar/title.dart';
 import '../styles/elevated_widget_class.dart';
 
-class ServicesProvidedPage extends StatelessWidget {
+class LearnMoreMissionsStatement extends StatelessWidget {
+  final List<String> missionStatementImages = [
+    'brian.png',
+    'habitat.png',
+    'cinci.png',
+  ];
+
+  final String missionStatementText =
+      'Our mission is to empower individuals and families experiencing homelessness by providing them with access to safe and affordable housing, comprehensive support services, and opportunities for personal and professional growth. We strive to create a compassionate and inclusive community where everyone has the resources and support they need to thrive.';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +23,7 @@ class ServicesProvidedPage extends StatelessWidget {
         backgroundColor: Color(0xFF4446A3),
         title: CustomAppBarTitle(
           title: 'Our Services',
-          icon: Icons.build_rounded,
+          icon: Icons.visibility_rounded,
         ),
       ),
       body: SingleChildScrollView(
@@ -24,6 +33,35 @@ class ServicesProvidedPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 20),
+              SizedBox(
+                height: 200,
+                child: Swiper(
+                  autoplay: true,
+                  itemCount: missionStatementImages.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.asset(
+                      missionStatementImages[index],
+                      fit: BoxFit.cover,
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: 16),
+              Text(
+                'Mission Statement:',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                missionStatementText,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              SizedBox(height: 16),
               ElevatedCard(
                 icon: Icons.home,
                 text: 'Access to Affordable Housing Options:',
@@ -80,4 +118,3 @@ class ServicesProvidedPage extends StatelessWidget {
     );
   }
 }
-

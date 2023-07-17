@@ -7,6 +7,7 @@ import 'form_field/Text_form_field.dart';
 import 'form_field/availability.dart';
 import 'form_field/carpool_dropdown.dart';
 import 'form_field/transportation_dropdown.dart';
+import 'home/bottom_bar.dart';
 import 'main.dart';
 
 class ContactMe extends StatefulWidget {
@@ -284,11 +285,14 @@ class _ContactPageState extends State<ContactPage> {
                     ),
                   ],
                 ),
+
               ),
+
             ],
           ),
         ),
       ),
+      bottomNavigationBar: BottomInfoBar(),
     );
   }
 

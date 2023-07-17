@@ -2,8 +2,8 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import 'components_body/lowerNav_body.dart';
-import 'components_body/our_mission.dart';
+import '../styles/button_classes.dart';
+import 'components_body/carousel_widgets/our_mission.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,14 +42,14 @@ class SwiperWidget extends StatelessWidget {
     List<String> titles = ['Our Mission', '', '', ''];
 
     List<Icon> icons = [
-      Icon(Icons.info_outline_rounded, color: Colors.white,),
+      Icon(Icons.corporate_fare_rounded, color: Colors.black,),
       Icon(Icons.person),
       Icon(Icons.settings),
       Icon(Icons.favorite),
     ];
 
     return SizedBox(
-      height: 500,
+      height: 400,
       child: Animate(
         effects: [
           FadeEffect(
@@ -68,9 +68,9 @@ class SwiperWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Card(
-                    elevation: 4,
+                    // elevation: 4,
                     shadowColor: Colors.black,
-                    color: Color(0xFF9ECBF1),
+                    color: Colors.grey[300],
                     child: ListTile(
                       leading: icons[index],
                       subtitle: Wrap(
@@ -91,7 +91,7 @@ class SwiperWidget extends StatelessWidget {
                       ),
                       title: Text(
                         '${titles[index]}',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
+                        style: TextStyle(fontSize: 24, color: Colors.grey[800]),
                       ),
                     ),
                   ),

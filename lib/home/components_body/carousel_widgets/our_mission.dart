@@ -4,8 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../mission_statement.dart';
-import 'lowerNav_body.dart';
+import '../../mission_statement.dart';
 
 
 class OurMission extends StatelessWidget {
@@ -22,19 +21,19 @@ class OurMission extends StatelessWidget {
             children: [
               MissionStatementIcon(
                 icon: Icons.language,
-                color: Colors.greenAccent,
+                color: Colors.white,
               ),
               MissionStatementIcon(
                 icon: Icons.electric_bolt,
-                color: Colors.yellowAccent,
+                color: Colors.white,
               ),
               MissionStatementIcon(
                 icon: Icons.favorite,
-                color: Colors.redAccent,
+                color: Colors.white,
               ),
               MissionStatementIcon(
                 icon: Icons.church,
-                color: Colors.black87,
+                color: Colors.white,
               ),
             ],
           ),

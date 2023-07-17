@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BottomInfoBar extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context); // Get the current theme
@@ -19,22 +20,7 @@ class BottomInfoBar extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                InkWell(
-                  onTap: () =>
-                      _launchURL('https://cincinnaticathedral.com/'),
-                  child: Text(
-                    'Christ Church',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w300, // Use a thinner font weight
-                      color: theme.primaryColorLight, // Use the accent color from the theme
-                      decoration: TextDecoration.underline, // Add underline decoration
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
+                SizedBox(width: 10,),
                 InkWell(
                   onTap: () =>
                       _launchURL('https://cincinnaticathedral.com/about/'),
@@ -42,9 +28,8 @@ class BottomInfoBar extends StatelessWidget {
                     'About',
                     style: TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.w300, // Use a thinner font weight
-                      color: theme.primaryColorLight, // Use the accent color from the theme
-                      decoration: TextDecoration.underline, // Add underline decoration
+                      fontWeight: FontWeight.w300,
+                      color: theme.primaryColorLight,
                     ),
                   ),
                 ),

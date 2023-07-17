@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../home/bottom_bar.dart';
 import '../home/components_appbar/title.dart';
 import '../styles/elevated_widget_class.dart';
 
@@ -52,6 +53,7 @@ class PlansForFutureGrowthPage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomInfoBar(),
     );
   }
 }

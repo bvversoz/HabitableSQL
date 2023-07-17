@@ -2,6 +2,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 
+import '../home/bottom_bar.dart';
 import '../home/components_appbar/title.dart';
 import '../styles/elevated_widget_class.dart';
 
@@ -61,6 +62,7 @@ class OrganizationalGoalsPage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomInfoBar(),
     );
   }
 }
