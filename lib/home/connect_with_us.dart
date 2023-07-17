@@ -28,14 +28,14 @@ class _ConnectUsState extends State<ConnectUs> {
             child:   Animate(
               effects: [
                 FadeEffect(
-                  delay: Duration(seconds: 1),
+                  delay: Duration(seconds: 2),
                   duration: Duration(seconds: 2),
                 )
               ],
               child: Chip(
                 elevation: 4,
-                shadowColor: Colors.white,
-                backgroundColor: Color(0xFFB2D3F1),
+                shadowColor: Colors.black,
+                backgroundColor: Colors.white,
                 label: TextButton(
                   style: TextButton.styleFrom(
                     primary: theme.primaryColor,
