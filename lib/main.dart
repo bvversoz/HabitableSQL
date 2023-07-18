@@ -3,14 +3,48 @@
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
 
-import 'contact.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'home/home.dart';
-import 'home/mission_statement.dart';
 
 void main() async {
   final gsheets = GSheets(credentials);
   final spreadsheetID = '18qgJIg9DFehV1WgHjcBrMD7oGie77xvCEhxySUhXLrY';
   await gsheets.spreadsheet(spreadsheetID);
+
+
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  FutureBuilder(
+    future: _initialization,
+    builder: (context, snapshot) {
+      if (snapshot.hasError) {
+        print('Firebase initialization error: ${snapshot.error}');
+        return Text('Firebase initialization error');
+      }
+      if (snapshot.connectionState == ConnectionState.done) {
+        return Home();
+      }
+      return CircularProgressIndicator();
+    },
+  );
+
+  final String apiKey = "AIzaSyChVwQ_m8MaST8OP2flOYR5GUe6LfOXTvY";
+  final String appId = "1:1009298241783:web:498a9df58d1d21129ebbf2";
+  final String messagingSenderId = "1009298241783";
+  final String projectId = "experiencebv-f06af";
+
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+    ),
+  );
+
+
+
+
   runApp(Home());
 }
 

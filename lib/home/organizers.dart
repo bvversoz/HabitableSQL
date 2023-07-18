@@ -26,7 +26,7 @@ class AvatarRow extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage('owen.png'),
+                    backgroundImage: AssetImage('rev_owen.png'),
                   ),
                   SizedBox(height: 8),
                   Text(
