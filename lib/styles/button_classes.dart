@@ -7,21 +7,29 @@ import 'package:url_launcher/url_launcher.dart';
 class LearnMoreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 24,
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/mission_learn_more');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: Colors.lightBlueAccent, // Set the button color to white
+    return Animate(
+      effects: [
+        FadeEffect(
+          delay: Duration(seconds: 3),
+          duration: Duration(seconds: 2),
         ),
-        child: Text(
-          'Learn More',
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w100,
-            color: Colors.white, // Set the text color to black
+      ],
+      child: SizedBox(
+        height: 24,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/mission_learn_more');
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Colors.grey, // Set the button color to white
+          ),
+          child: Text(
+            'Learn More',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w100,
+              color: Colors.white, // Set the text color to black
+            ),
           ),
         ),
       ),
@@ -40,7 +48,7 @@ class ContactUsButton extends StatelessWidget {
         ),
       ],
       child: SizedBox(
-        height: 24,
+        height: 36,
         child: ElevatedButton(
           onPressed: () {
             // Handle button press
@@ -52,7 +60,7 @@ class ContactUsButton extends StatelessWidget {
           child: Text(
             'Contact Us',
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 16,
               fontWeight: FontWeight.w100,
               color: Colors.black, // Change the text color to black
             ),
@@ -74,7 +82,7 @@ class DonateButton extends StatelessWidget {
         ),
       ],
       child: SizedBox(
-        height: 24,
+        height: 36,
         child: ElevatedButton(
           onPressed: () {
             Navigator.pushNamed(context, '/donate');
@@ -85,7 +93,7 @@ class DonateButton extends StatelessWidget {
           child: Text(
             'Donate',
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 16,
               fontWeight: FontWeight.w100,
               color: Colors.black, // Change the text color to black
             ),
@@ -191,7 +199,7 @@ class PlansForFutureGrowth extends StatelessWidget {
         style: TextButton.styleFrom(
           primary: Colors.white, // Change the button text color to white
         ),
-        child: Text('Plans for Future Growth', style: BottomTextStyle()),
+        child: Text('Future Growth', style: BottomTextStyle()),
       ),
     );
   }
@@ -295,9 +303,9 @@ class BottomSocialsContainer extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         child: Text(
-          'Socials',
+          'SOCIAL',
           style: TextStyle(
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: FontWeight.w100,
             color: Colors.black,
             letterSpacing: 2,
@@ -327,9 +335,9 @@ class BottomFocusContainer extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         child: Text(
-          'Organizational Focus',
+          'ORGANIZATION',
           style: TextStyle(
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: FontWeight.w100,
             color: Colors.black,
             letterSpacing: 2,

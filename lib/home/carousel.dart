@@ -42,7 +42,7 @@ class SwiperWidget extends StatelessWidget {
     List<String> titles = ['Our Mission', '', '', ''];
 
     List<Icon> icons = [
-      Icon(Icons.corporate_fare_rounded, color: Colors.black,),
+      Icon(Icons.corporate_fare_rounded, color: Colors.lightBlueAccent,),
       Icon(Icons.person),
       Icon(Icons.settings),
       Icon(Icons.favorite),
@@ -50,72 +50,80 @@ class SwiperWidget extends StatelessWidget {
 
     return SizedBox(
       height: 400,
-      child: Animate(
-        effects: [
-          FadeEffect(
-            delay: Duration(seconds: 1),
-            duration: Duration(seconds: 2),
-          ),
-        ],
-        child: Swiper(
-          autoplay: false,
-          itemCount: widgetList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Card(
-                    // elevation: 4,
-                    shadowColor: Colors.black,
-                    color: Colors.grey[300],
-                    child: ListTile(
-                      leading: icons[index],
-                      subtitle: Wrap(
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        alignment: WrapAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: widgetList[index],
+
+        child:Container(
+          color: Colors.grey[400],
+          child: Swiper(
+            autoplay: false,
+            itemCount: widgetList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Animate(
+                      effects: [
+                        FadeEffect(
+                          delay: Duration(seconds: 1),
+                          duration: Duration(seconds: 2),
+                        ),
+                      ],
+                      child: SizedBox(
+                        height: 300,
+                        child: Card(
+                          elevation: 4,
+                          shadowColor: Colors.black,
+                          color: Colors.white,
+                          child: ListTile(
+                            leading: icons[index],
+                            subtitle: Wrap(
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              alignment: WrapAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: widgetList[index],
+                                ),
+                                SizedBox(width: 10),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child:
+                                  LearnMoreButton(),
+                                ),
+                              ],
+                            ),
+                            title: Text(
+                              '${titles[index]}',
+                              style: TextStyle(fontSize: 24, color: Colors.grey[800]),
+                            ),
                           ),
-                          SizedBox(width: 10),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child:
-                            LearnMoreButton(),
-                          ),
-                        ],
-                      ),
-                      title: Text(
-                        '${titles[index]}',
-                        style: TextStyle(fontSize: 24, color: Colors.grey[800]),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            );
-          },
-          pagination: SwiperPagination(
-            builder: DotSwiperPaginationBuilder(
-              color: Colors.grey[400],
-              activeColor: Colors.grey[800],
-              size: 8,
-              activeSize: 10,
-              space: 5,
+                ],
+              );
+            },
+            pagination: SwiperPagination(
+              builder: DotSwiperPaginationBuilder(
+                color: Colors.grey[400],
+                activeColor: Colors.grey[800],
+                size: 8,
+                activeSize: 10,
+                space: 5,
+              ),
+            ),
+            control: SwiperControl(
+              color: Colors.grey,
+              iconNext: Icons.arrow_right,
+              size: 25,
+              iconPrevious: Icons.arrow_left,
             ),
           ),
-          control: SwiperControl(
-            color: Colors.grey,
-            iconNext: Icons.arrow_right,
-            size: 25,
-            iconPrevious: Icons.arrow_left,
-          ),
         ),
-      ),
+
     );
   }
 }

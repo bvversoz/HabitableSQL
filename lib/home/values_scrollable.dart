@@ -29,7 +29,7 @@ class OrganizationValuesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50, // Adjust the height as needed
+      height: 25, // Adjust the height as needed
       child: Marquee(
         text: organizationValues.join('  •  '), // Join the values with a separator
         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),

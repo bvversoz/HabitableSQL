@@ -21,9 +21,12 @@ class Home extends StatelessWidget {
     return MaterialApp(
       routes: {
         /// Pop Up Menu
-        '/projects': (context) => PastProjectsAndCredibilityPage(),
-        '/events': (context) => EventsPage(),
 
+
+
+        /// Chips Navigation
+        '/events': (context) => EventsPage(),
+        '/projects': (context) => PastProjectsAndCredibilityPage(),
 
         /// Bottom Navigation
         '/contact': (context) => ContactPage(),

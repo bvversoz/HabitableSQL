@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../bottom_bar.dart';
+import '../../components_appbar/title.dart';
 
 class PastProjectsAndCredibilityPage extends StatelessWidget {
   final List<String> pastProjects = [
@@ -19,8 +20,16 @@ class PastProjectsAndCredibilityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Past Projects and Credibility'),
+        backgroundColor: Color(0xFF4446A3),
+        title: CustomAppBarTitle(
+          title: 'Projects',
+          icon: Icons.construction_sharp,
+        ),
       ),
+
+      // AppBar(
+      //   title: Text('Past Projects and Credibility'),
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

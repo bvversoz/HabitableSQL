@@ -44,12 +44,12 @@ class BottomInfoBar extends StatelessWidget {
             color: Colors.white,
             onPressed: () {},
           ),
-          IconButton(
-            tooltip: 'Favorite',
-            icon: Icon(Icons.favorite),
-            color: Colors.white, // Use the icon color from the theme
-            onPressed: () {},
-          ),
+          // IconButton(
+          //   tooltip: 'Favorite',
+          //   icon: Icon(Icons.favorite),
+          //   color: Colors.white, // Use the icon color from the theme
+          //   onPressed: () {},
+          // ),
         ],
       ),
     );

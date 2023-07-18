@@ -18,6 +18,7 @@ class OurMission extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               MissionStatementIcon(
                 icon: Icons.language,
@@ -43,16 +44,24 @@ class OurMission extends StatelessWidget {
             height: 1,
           ),
           SizedBox(height: 10),
-          Card(
-            shadowColor: Colors.black,
-            color: Colors.grey[200],
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "We are dedicated to empowering individuals experiencing homelessness by helping them find affordable housing and providing comprehensive support. Together, we create a compassionate environment where everyone has access to safe and stable housing. Through counseling, job assistance, skills training, and essential resources, we empower individuals and families to transform their lives and build a stronger community.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black38,
+          SizedBox(
+            height: 100,
+            child: Card(
+              shadowColor: Colors.black,
+              color: Colors.grey[200],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'We empower individuals experiencing homelessness through affordable housing, comprehensive support, and resources, fostering a stronger community',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
